@@ -7,9 +7,11 @@ SOURCES += \
         arkhamairlines.cpp \
         atlantisairlines.cpp \
         main.cpp \
+        plannerinterface.cpp \
         routefinder.cpp
 
 HEADERS += \
 	arkhamairlines.h \
 	atlantisairlines.h \
+	plannerinterface.h \
 	routefinder.h

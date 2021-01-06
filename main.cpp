@@ -2,7 +2,7 @@
 #include "arkhamairlines.h"
 #include "atlantisairlines.h"
 #include "routefinder.h"
-//#include "plannerinterface.h"
+#include "plannerinterface.h"
 //#include "arkhamplanner.h"
 //#include "atlantisplanner.h"
 
@@ -48,30 +48,30 @@ int main()
 			cout << city << endl;
 	}
 
-//	// PlannerInterface test
-//	cout << endl << endl << "PlannerInterface test" << endl;
-//	{
-//		// A dummy class with empty network
-//		class Dummy : public PlannerInterface
-//		{
-//		public:
-//			void updateData(){cout << "updateData" << endl;}
-//			int getDirectTravelTime(const string &, const string &){cout << "getDirectTravelTime" << endl;return 0;}
-//		};
+    // PlannerInterface test
+    cout << endl << endl << "PlannerInterface test" << endl;
+    {
+        // A dummy class with empty network
+        class Dummy : public PlannerInterface
+        {
+        public:
+            void updateData(){cout << "updateData" << endl;}
+            int getDirectTravelTime(const string &, const string &){cout << "getDirectTravelTime" << endl;return 0;}
+        };
 
-//		PlannerInterface *test=new Dummy;
-//		// Ha valamelyik függvény nincs meg, az maradjon kommentben
-//		test->updateData(); // updateData
-//		test->getDirectTravelTime("London", "Paris"); // getDirectTravelTime
-//		try {
-//			list<string> route=test->findRoute("London", "Madrid");
-//			cout << route.size() << endl;
-//			for (string city : route) cout << city << endl;
-//		}  catch (exception &e) {
-//			cout << e.what() << endl; // "No route from London to Madrid
-//		}
-//		delete test;
-//	}
+        PlannerInterface *test=new Dummy;
+        // Ha valamelyik függvény nincs meg, az maradjon kommentben
+        test->updateData(); // updateData
+        test->getDirectTravelTime("London", "Paris"); // getDirectTravelTime
+        try {
+            list<string> route=test->findRoute("London", "Madrid");
+            cout << route.size() << endl;
+            for (string city : route) cout << city << endl;
+        }  catch (exception &e) {
+            cout << e.what() << endl; // "No route from London to Madrid
+        }
+        delete test;
+    }
 
 //	// ArkhamPlanner test: konstruktor, updateData
 //	cout << endl << endl << "ArkhamPlanner test: konstruktor, updateData" << endl;
