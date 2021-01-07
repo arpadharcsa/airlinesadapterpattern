@@ -7,6 +7,7 @@ SOURCES += \
         arkhamairlines.cpp \
         arkhamplanner.cpp \
         atlantisairlines.cpp \
+        atlantisplanner.cpp \
         main.cpp \
         plannerinterface.cpp \
         routefinder.cpp
