@@ -3,7 +3,7 @@
 #include "atlantisairlines.h"
 #include "routefinder.h"
 #include "plannerinterface.h"
-//#include "arkhamplanner.h"
+#include "arkhamplanner.h"
 //#include "atlantisplanner.h"
 
 using namespace std;
@@ -74,24 +74,24 @@ int main()
     }
 
 //	// ArkhamPlanner test: konstruktor, updateData
-//	cout << endl << endl << "ArkhamPlanner test: konstruktor, updateData" << endl;
-//	{
-//		ArkhamAirlines aa;
-//		PlannerInterface *apl=new ArkhamPlanner(&aa);
+    cout << endl << endl << "ArkhamPlanner test: konstruktor, updateData" << endl;
+    {
+        ArkhamAirlines aa;
+        PlannerInterface *apl=new ArkhamPlanner(&aa);
 
-//		apl->updateData();
-//		list<pair<string,string>> plans={{"London", "Madrid"}, {"Athens", "Rome"}, {"Budapest", "Berlin"}, {"Moscow", "Paris"}};
-//		for (auto routePlan: plans)
-//		{
-//			cout << "Travel route from " << routePlan.first << " to " << routePlan.second << ":" << endl;
-//			try {
-//				auto route=apl->findRoute(routePlan.first, routePlan.second);
-//				for (string city : route) cout << city << endl;
-//			}  catch (exception &e) {
-//				cout << e.what() << endl; // "No route from London to Madrid
-//			}
-//		}
-//		delete apl;
+        apl->updateData();
+        list<pair<string,string>> plans={{"London", "Madrid"}, {"Athens", "Rome"}, {"Budapest", "Berlin"}, {"Moscow", "Paris"}};
+        for (auto routePlan: plans)
+        {
+            cout << "Travel route from " << routePlan.first << " to " << routePlan.second << ":" << endl;
+            try {
+                auto route=apl->findRoute(routePlan.first, routePlan.second);
+                for (string city : route) cout << city << endl;
+            }  catch (exception &e) {
+                cout << e.what() << endl; // "No route from London to Madrid
+            }
+        }
+        delete apl;
 ////		Travel route from London to Madrid:
 ////		London
 ////		Moscow
@@ -105,26 +105,26 @@ int main()
 ////		Travel route from Moscow to Paris:
 ////		Moscow
 ////		Paris
-//	}
+    }
 
-//	// ArkhamPlanner test: getDirectTravelTime
-//	cout << endl << endl << "ArkhamPlanner test: getDirectTravelTime " << endl;
-//	{
-//		ArkhamAirlines aa;
-//		PlannerInterface *apl=new ArkhamPlanner(&aa);
+    // ArkhamPlanner test: getDirectTravelTime
+    cout << endl << endl << "ArkhamPlanner test: getDirectTravelTime " << endl;
+    {
+        ArkhamAirlines aa;
+        PlannerInterface *apl=new ArkhamPlanner(&aa);
 
-//		apl->updateData();
-//		list<pair<string,string>> plans={{"London", "Madrid"}, {"Athens", "Rome"}, {"Budapest", "Berlin"}, {"Moscow", "Paris"}};
-//		for (auto routePlan: plans)
-//		{
-//			cout << "Direct travel time from " << routePlan.first << " to " << routePlan.second << ": " << apl->getDirectTravelTime(routePlan.first, routePlan.second) << endl;
-//		}
-//		delete apl;
+        apl->updateData();
+        list<pair<string,string>> plans={{"London", "Madrid"}, {"Athens", "Rome"}, {"Budapest", "Berlin"}, {"Moscow", "Paris"}};
+        for (auto routePlan: plans)
+        {
+            cout << "Direct travel time from " << routePlan.first << " to " << routePlan.second << ": " << apl->getDirectTravelTime(routePlan.first, routePlan.second) << endl;
+        }
+        delete apl;
 ////		Direct travel time from London to Madrid: 0
 ////		Direct travel time from Athens to Rome: 100
 ////		Direct travel time from Budapest to Berlin: 0
 ////		Direct travel time from Moscow to Paris: 400
-//	}
+    }
 
 //	// AtlantisPlanner test: konstruktor, updateData
 //	cout << endl << endl << "AtlantisPlanner test: konstruktor, updateData" << endl;

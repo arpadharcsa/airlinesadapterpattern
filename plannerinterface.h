@@ -24,7 +24,10 @@ public:
 
 class PlannerInterface
 {
+
+protected:
     RouteFinder routeFinder;
+
 public:
     virtual void updateData() = 0;
 

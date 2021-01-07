@@ -5,6 +5,7 @@ CONFIG -= qt
 
 SOURCES += \
         arkhamairlines.cpp \
+        arkhamplanner.cpp \
         atlantisairlines.cpp \
         main.cpp \
         plannerinterface.cpp \
@@ -12,6 +13,8 @@ SOURCES += \
 
 HEADERS += \
 	arkhamairlines.h \
+	arkhamplanner.h \
 	atlantisairlines.h \
+	atlantisplanner.h \
 	plannerinterface.h \
 	routefinder.h
